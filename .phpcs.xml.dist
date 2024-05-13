@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer"
+  xsi:noNamespaceSchemaLocation="phpcs.xsd">
+  <description>The coding standard for PHP_CodeSniffer itself.</description>
+
+  <file>app</file>
+
+  <exclude-pattern>*/vendor</exclude-pattern>
+
+  <!--  Turn colors ON  -->
+  <arg name="colors" />
+  <!-- Show progress of the run -->
+  <arg value="p" />
+  <!-- Show sniff codes in all reports -->
+  <arg value="s" />
+
+
+  <rule ref="PSR1">
+    <!-- Test method names do not need to be Camel Caps -->
+    <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+      <!-- <exclude-pattern>/tests/*Test.php</exclude-pattern> -->
+    </rule>
+  </rule>
+  <rule ref="PSR2" />
+
+  <!-- Include PSR12 rules except -->
+  <rule ref="PSR12" />
+  <rule ref="PSR12.Operators.OperatorSpacing.NoSpaceAfter">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+  <rule ref="PSR12.Operators.OperatorSpacing.NoSpaceBefore">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+
+  <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeOpenBracket">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+  <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+  <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+  <rule ref="Squiz.WhiteSpace.PropertyLabelSpacing.After">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+
+  <rule ref="Generic">
+    <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
+    <exclude name="Generic.Files.EndFileNoNewline.Found" />
+    <exclude name="Generic.Files.LowercasedFilename" />
+    <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
+    <exclude name="Generic.PHP.ClosingPHPTag" />
+    <exclude name="Generic.PHP.RequireStrictTypes.MissingDeclaration" />
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
+  </rule>
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz">
+    <exclude name="Squiz.Files.FileExtension.ClassFound" />
+  </rule>
+  <!--
+        RULES:      MySource
+     -->
+  <!-- MySource - Channels -->
+  <rule ref="MySource.Channels.DisallowSelfActions" />
+  <rule ref="MySource.Channels.IncludeOwnSystem" />
+  <exclude name="MySource.Channels.IncludeSystem" />
+  <rule ref="MySource.Channels.UnusedSystem" />
+
+  <!-- MySource - Commenting -->
+  <!-- <rule ref="MySource.Commenting.FunctionComment"/> -->
+
+  <!-- MySource - CSS -->
+  <rule ref="MySource.CSS.BrowserSpecificStyles" />
+
+  <!-- MySource - Debug -->
+  <rule ref="MySource.Debug.DebugCode" />
+  <rule ref="MySource.Debug.FirebugConsole" />
+  <rule ref="MySource.Debug.FirebugConsole.ConflictFound">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+
+  <!-- MySource - Objects -->
+  <rule ref="MySource.Objects.AssignThis" />
+  <rule ref="MySource.Objects.CreateWidgetTypeCallback" />
+  <rule ref="MySource.Objects.DisallowNewWidget" />
+
+  <!-- MySource - PHP -->
+  <rule ref="MySource.PHP.EvalObjectFactory" />
+  <rule ref="MySource.PHP.GetRequestData" />
+  <exclude name="MySource.PHP.ReturnFunctionValue" />
+  <rule ref="MySource.PHP.AjaxNullComparison" />
+
+  <!-- MySource - Strings -->
+  <rule ref="MySource.Strings.JoinStrings" />
+
+
+  <!--
+        RULES:      Squiz
+     -->
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
+    <exclude-pattern>./**/*.js</exclude-pattern>
+  </rule>
+  <!-- Squiz - PHP -->
+  <rule ref="Squiz.PHP.CommentedOutCode">
+    <exclude-pattern>*/config/*</exclude-pattern>
+    <properties>
+      <property name="maxPercentage " value="45" />
+    </properties>
+  </rule>
+  <exclude name="Squiz.PHP.DisallowComparisonAssignment" />
+  <exclude name="Squiz.PHP.DisallowInlineIf" />
+  <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
+  <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops" />
+  <rule ref="Squiz.PHP.DiscouragedFunctions" />
+  <rule ref="Squiz.PHP.EmbeddedPhp" />
+  <rule ref="Squiz.PHP.Eval" />
+  <!--<rule
+  ref="Squiz.PHP.ForbiddenFunctions"/>-->
+  <rule ref="Squiz.PHP.GlobalKeyword" />
+  <rule ref="Squiz.PHP.Heredoc" />
+  <rule ref="Squiz.PHP.InnerFunctions" />
+  <rule ref="Squiz.PHP.LowercasePHPFunctions" />
+  <rule ref="Squiz.PHP.NonExecutableCode" />
+
+  <!-- Squiz - Scope -->
+  <rule ref="Squiz.Scope.MemberVarScope" />
+  <rule ref="Squiz.Scope.MethodScope" />
+  <rule ref="Squiz.Scope.StaticThisUsage" />
+
+  <!-- Squiz - WhiteSpace -->
+  <rule ref="Squiz.WhiteSpace.CastSpacing" />
+  <rule ref="Squiz.WhiteSpace.ControlStructureSpacing" />
+  <!--<rule
+  ref="Squiz.WhiteSpace.FunctionClosingBraceSpace"/>-->
+  <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace" />
+  <exclude name="Squiz.WhiteSpace.FunctionSpacing" />
+  <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing" />
+  <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing" />
+  <exclude name="Squiz.WhiteSpace.MemberVarSpacing" />
+  <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing" />
+  <exclude name="Squiz.WhiteSpace.OperatorSpacing" />
+  <rule ref="Squiz.WhiteSpace.PropertyLabelSpacing" />
+  <rule ref="Squiz.WhiteSpace.ScopeClosingBrace" />
+  <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
+  <rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+</ruleset>
