@@ -1,17 +1,10 @@
 <?php
 
-namespace App;
-
 /**
  * Class Book.
  */
 class Book
 {
-    /**
-     * 本のタイトル。
-     *
-     * @var string
-     */
     public string $title;
 
     /**
