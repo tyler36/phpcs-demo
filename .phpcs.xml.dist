@@ -19,6 +19,7 @@
     <exclude name="MySource.Commenting.FunctionComment.MissingParamTag" />
     <exclude name="MySource.PHP.ReturnFunctionValue.NotAssigned" />
     <exclude name="MySource.Commenting.FunctionComment.MissingReturn" />
+    <exclude name="MySource.Commenting.FunctionComment.IncorrectParamVarName" />
     <exclude name="PEAR.Files.IncludingFile.UseInclude" />
     <exclude name="PEAR.Formatting.MultiLineAssignment.EqualSignLine" />
     <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
@@ -43,16 +44,13 @@
     <exclude-pattern>./**/*.js</exclude-pattern>
   </rule>
 
-  <rule ref="MySource">
-    <exclude name="MySource.Channels.IncludeSystem" />
-  </rule>
-
   <rule ref="Squiz">
     <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned" />
     <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
     <exclude name="Squiz.Commenting.ClassComment.Missing" />
     <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing" />
     <exclude name="Squiz.Commenting.FileComment.Missing" />
+    <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
     <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
     <exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />
@@ -111,4 +109,14 @@
     <exclude-pattern>./**/*.js</exclude-pattern>
   </rule>
 
+  <rule ref="SlevomatCodingStandard.Classes.ClassStructure.IncorrectGroupOrder">
+    <exclude-pattern>*Test.php</exclude-pattern>
+  </rule>
+  <rule ref="SlevomatCodingStandard.Classes.PropertySpacing.IncorrectCountOfBlankLinesAfterProperty"></rule>
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses.IncorrectlyOrderedUses"></rule>
+  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint">
+    <exclude-pattern>*Test.php</exclude-pattern>
+  </rule>
+  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint"></rule>
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint"></rule>
 </ruleset>
