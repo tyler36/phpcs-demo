@@ -1,0 +1,14 @@
+{
+  "[php]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+  },
+  "phpsab.standard": "PSR12",
+  "phpsab.fixerEnable": true,
+  "phpsab.snifferEnable": true,
+  "phpsab.autoRulesetSearch": true,
+  "phpsab.executablePathCS": "${workspaceFolder}/vendor/bin/phpcs",
+  "phpsab.executablePathCBF": "${workspaceFolder}/vendor/bin/phpcbf",
+  "phpsab.snifferShowSources": true,
+  "phpsab.snifferMode": "onSave",
+}
