@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: "🧹 Run PHPCS"
         uses: guix77/phpcs-drupal-action@php8.3
