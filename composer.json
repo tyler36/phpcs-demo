@@ -9,6 +9,6 @@
         "lint:php:fix": "phpcbf"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.9"
+        "phpcsstandards/php_codesniffer": "^3.11"
     }
 }
